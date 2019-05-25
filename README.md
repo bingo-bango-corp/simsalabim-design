@@ -7,6 +7,7 @@ Just install it like this `yarn add simsalabim-design` and then import the compo
 # Components
 
 - **Card**: It's a super basic card. Bit of border radius and a white background and some padding. No props, nothing.
+- **BingoButton**: Simple button with two `color` modes: `red` and `white`. Pass `onClick` prop. Pass `color` prop as string.
 
 ## Project setup
 ```
