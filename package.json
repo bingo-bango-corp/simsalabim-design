@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name simsalabim-design ./src/components/index.js"
+    "build-bundle": "vue-cli-service build --target lib --name simsalabim-design ./src/components/index.ts"
   },
   "main": "./dist/simsalabim-design.common.js",
   "files": [
