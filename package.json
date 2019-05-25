@@ -17,13 +17,13 @@
   ],
   "dependencies": {
     "core-js": "^2.6.5",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
-    "vue-ripple-directive": "^2.0.1",
-    "vue-router": "^3.0.3"
+    "vue-ripple-directive": "^2.0.1"
   },
   "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "vue-router": "^3.0.3",
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
