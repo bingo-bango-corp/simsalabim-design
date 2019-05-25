@@ -1,9 +1,15 @@
 import Vue from 'vue'
 
+import Ripple from 'vue-ripple-directive'
+
 import Card from './Card'
+import BingoButton from './BingoButton'
+
+Vue.directive('ripple', Ripple);
 
 const Components = {
-  Card
+  Card,
+  BingoButton
 }
 
 Object.keys(Components).forEach(name => {

@@ -1,20 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="nav">
+      <router-link v-for="(component, key) in components" :to="key" :key="component.id">
+        {{ key }}
+      </router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import components from './components'
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      components: components
+    }
+  },
 }
 </script>
+
 
 <style>
 #app {

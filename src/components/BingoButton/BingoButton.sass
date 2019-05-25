@@ -1,0 +1,17 @@
+@import '@/mixins/typography.sass'
+@import '@/mixins/elevation.sass'
+.BingoButton
+  display: inline-block
+  button
+    @include typography(small)
+    @include elevation(2)
+    height: 64px
+    border-radius: 16px
+    padding: 0 24px
+    border: none
+    outline: none
+    cursor: pointer
+    transition: box-shadow .3s, background .3s
+    &:hover
+      @include elevation(3)
+      background: lighten(#EB5757, 5)
