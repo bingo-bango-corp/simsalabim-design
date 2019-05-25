@@ -1,11 +1,10 @@
 <template>
-  <div class="home">
-
+  <div class="Home">
+    Select a component to get started
   </div>
 </template>
 
-<script>
-export default {
-  name: 'home',
-}
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({})
 </script>

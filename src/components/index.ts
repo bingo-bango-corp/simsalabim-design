@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue, { VueConstructor } from 'vue'
 
 import Ripple from 'vue-ripple-directive'
 
@@ -7,7 +7,9 @@ import BingoButton from './BingoButton'
 
 Vue.directive('ripple', Ripple);
 
-const Components = {
+interface ComponentList { [key: string]: VueConstructor }
+
+const Components: ComponentList = {
   Card,
   BingoButton
 }
