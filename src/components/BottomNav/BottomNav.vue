@@ -5,7 +5,7 @@
       :key="route.meta.friendlyName"
       :class="{ active : route === activeRoute}"
       class="route"
-      @click="navigate(route.name)"
+      @click="navigate(route)"
     >
       <span class="emoji">{{ route.meta.iconEmoji }}</span>
       <span class="title">{{ route.meta.friendlyName }}</span>
@@ -39,9 +39,9 @@ export default class BottomNav extends Vue {
   }) public test!: Boolean
 
   @Emit('navigate')
-  navigate(routeName: String): String {
-    if (this.test) this.test_currentRouteName = routeName
-    return routeName
+  navigate(route: BingoRoute): BingoRoute {
+    if (this.test) this.test_currentRouteName = route.name
+    return route
   }
 
   get navTargets(): RouteList {
