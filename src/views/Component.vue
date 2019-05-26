@@ -1,12 +1,14 @@
 <template>
   <div class="about">
-    <component :is="$route.params.id">
+    <component v-bind="{ test: true }" :is="$route.params.id">
       slot content
     </component>
   </div>
 </template>
 
 <script lang="ts">
-import '@/components'
-export default {}
+import components from '@/components'
+export default {
+  components: components
+}
 </script>

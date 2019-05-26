@@ -1,21 +1,17 @@
-import Vue, { VueConstructor } from 'vue'
-
-import Ripple from 'vue-ripple-directive'
-
 import Card from './Card'
 import BingoButton from './BingoButton'
+import BottomNav from './BottomNav'
 
-Vue.directive('ripple', Ripple);
+export { default as Card } from './Card'
+export { default as BingoButton } from './BingoButton'
+export { default as BottomNav } from './BottomNav'
 
-interface ComponentList { [key: string]: VueConstructor }
+export { RouteList, BingoRoute, BingoMeta } from './BottomNav/interfaces'
 
-const Components: ComponentList = {
+const components = {
   Card,
-  BingoButton
+  BingoButton,
+  BottomNav
 }
 
-Object.keys(Components).forEach(name => {
-  Vue.component(name, Components[name])
-})
-
-export default Components
+export default components

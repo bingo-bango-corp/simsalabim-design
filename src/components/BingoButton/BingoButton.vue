@@ -1,6 +1,6 @@
 <template>
   <div class="BingoButton">
-    <button :style="styles.buttonStyles" v-ripple="styles.ripple" @click="onClick">
+    <button :style="styles.buttonStyles" @click="onClick">
       <slot>Button</slot>
     </button>
   </div>

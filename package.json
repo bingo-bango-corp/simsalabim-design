@@ -7,13 +7,15 @@
     "lint": "vue-cli-service lint",
     "build-bundle": "vue-cli-service build --target lib --name simsalabim-design ./src/components/index.ts"
   },
+  "typings": "./src/components/index.ts",
   "main": "./dist/simsalabim-design.common.js",
   "files": [
     "dist/*",
     "src/*",
     "public/*",
     "*.json",
-    "*.js"
+    "*.js",
+    "types/*"
   ],
   "dependencies": {
     "core-js": "^2.6.5",
