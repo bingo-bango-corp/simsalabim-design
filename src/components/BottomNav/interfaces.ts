@@ -1,13 +1,10 @@
 import { RouteConfig } from 'vue-router'
 
 export type BingoMeta = {
-  topLevel: true,
-  friendlyName: string,
+  topLevel: true
+  friendlyName: string
+  translationKey: string
   iconEmoji: string
-  [key: string]: any
-} | {
-  topLevel: false,
-  friendlyName?: string,
   [key: string]: any
 } | {
   [key: string]: any

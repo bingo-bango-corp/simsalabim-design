@@ -8,7 +8,10 @@
       @click="navigate(route)"
     >
       <span class="emoji">{{ route.meta.iconEmoji }}</span>
-      <span class="title">{{ route.meta.friendlyName }}</span>
+      <div class="title">
+        <span v-if="i18n" class="title">{{ i18n.t(route.meta.translationKey) }}</span>
+        <span v-else class="title">{{ route.meta.friendlyName }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +41,10 @@ export default class BottomNav extends Vue {
     default: false
   }) public test!: Boolean
 
+  @Prop({
+    type: Object,
+  }) public i18n!: Object
+
   @Emit('navigate')
   navigate(route: BingoRoute): BingoRoute {
     if (this.test) this.test_currentRouteName = route.name
@@ -65,6 +72,10 @@ export default class BottomNav extends Vue {
         'Current route does not exist in routes provided to BottomNav. Please pass the full RouteList as provided to vue-router.'
       )
     }
+  }
+
+  mounted() {
+    console.log(this.i18n)
   }
 }
 
