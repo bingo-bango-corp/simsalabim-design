@@ -1,8 +1,10 @@
 <template>
   <div class="about">
-    <component v-bind="{ test: true }" :is="$route.params.id">
-      slot content
-    </component>
+    <ThemeProvider theme="dark">
+      <component v-bind="{ test: true }" :is="$route.params.id">
+        slot content
+      </component>
+    </ThemeProvider>
   </div>
 </template>
 
