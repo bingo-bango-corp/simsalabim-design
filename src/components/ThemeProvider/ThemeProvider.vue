@@ -1,5 +1,6 @@
 <template>
   <div class="ThemeProvider" :style="renderedTheme">
+    <slot></slot>
   </div>
 </template>
 

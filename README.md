@@ -27,6 +27,10 @@ Oh — if you just wanna see how it looks, slap `test` on it and it'll display s
 
 Bingo Bango 🧙‍♂️
 
+### ThemeProvider
+
+ThemeProvier provides themes. It does so in the form of CSS variables. There's two themes available: 'dark' or 'light'. Select your theme by passing the `theme` prop with a string that reads the theme you want. The component will then simply attach theme values as variables onto itself. Wrap your app in the theme provider and you can use the values inside. This way, you get an easy light/dark theme!
+
 ## Project setup
 ```
 yarn install
