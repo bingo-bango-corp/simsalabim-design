@@ -4,23 +4,36 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 import { theme, themeColor } from './types'
 import { light, dark } from './themes'
 
 @Component
 export default class ThemeProvider extends Vue {
-  activeTheme: theme | null = light
+  @Prop({
+    type: String,
+    default: 'light'
+  }) public theme!: string
+
+  get selectedTheme() {
+    switch (this.theme) {
+      case 'light':
+        return light
+      case 'dark':
+        return dark
+      default:
+        return light
+    }
+  }
 
   get renderedTheme() {
-    if (!this.activeTheme) throw new Error('No active theme selected')
     return {
-      '--foreground': this.flattenThemeColor(this.activeTheme.tokens.foreground),
-      '--background': this.flattenThemeColor(this.activeTheme.tokens.background),
-      '--level1': this.flattenThemeColor(this.activeTheme.tokens.level1),
-      '--level2': this.flattenThemeColor(this.activeTheme.tokens.level2),
-      '--level3': this.flattenThemeColor(this.activeTheme.tokens.level3),
-      '--level4': this.flattenThemeColor(this.activeTheme.tokens.level4),
+      '--foreground': this.flattenThemeColor(this.selectedTheme.tokens.foreground),
+      '--background': this.flattenThemeColor(this.selectedTheme.tokens.background),
+      '--level1': this.flattenThemeColor(this.selectedTheme.tokens.level1),
+      '--level2': this.flattenThemeColor(this.selectedTheme.tokens.level2),
+      '--level3': this.flattenThemeColor(this.selectedTheme.tokens.level3),
+      '--level4': this.flattenThemeColor(this.selectedTheme.tokens.level4),
     }
   }
 
