@@ -19,7 +19,16 @@ export const routes: RouteList = [
       topLevel: true,
       iconEmoji: '🙏‍',
       requiresAuth: true
-    }
+    },
+    children: [
+      {
+        path: 'new',
+        name: 'newJob',
+        meta: {
+          layout: 'default'
+        }
+      }
+    ]
   },
   {
     path: "/login",

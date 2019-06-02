@@ -64,8 +64,26 @@ export default class BottomNav extends Vue {
     return this.filterRouteByName(this.routeName)
   }
 
+  get flattenedRouteList(): RouteList {
+    let result: RouteList = []
+
+    this.routes.forEach(r => {
+      if (r.children) {
+        r.children.forEach((c: BingoRoute) => {
+          result.push(c)
+        })
+        r.children = null
+        result.push(r)
+      } 
+      result.push(r)
+    })
+
+    return result
+  }
+
   filterRouteByName(name: String): BingoRoute {
-    const matched = this.routes.filter(r => r.name === name)
+    console.log(this.flattenedRouteList)
+    const matched = this.flattenedRouteList.filter(r => r.name === name)
     if (matched.length != 0) return matched[0]
     else {
       throw new Error(
