@@ -7,7 +7,9 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import { theme, themeColor } from './types'
-import { light, dark } from './themes'
+import themes from './themes'
+
+export { default as themes } from './themes'
 
 @Component
 export default class ThemeProvider extends Vue {
@@ -17,14 +19,8 @@ export default class ThemeProvider extends Vue {
   }) public theme!: string
 
   get selectedTheme() {
-    switch (this.theme) {
-      case 'light':
-        return light
-      case 'dark':
-        return dark
-      default:
-        return light
-    }
+    if (!themes[this.theme]) throw new Error(`Theme ${this.theme} does not exist.`)
+    return themes[this.theme]
   }
 
   get renderedTheme() {

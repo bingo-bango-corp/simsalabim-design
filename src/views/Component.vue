@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <ThemeProvider theme="dark">
+    <ThemeProvider theme="light">
       <component v-bind="{ test: true }" :is="$route.params.id">
         slot content
       </component>
