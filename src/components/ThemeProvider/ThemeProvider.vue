@@ -9,8 +9,6 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 import { theme, themeColor } from './types'
 import themes from './themes'
 
-export { default as themes } from './themes'
-
 @Component
 export default class ThemeProvider extends Vue {
   @Prop({

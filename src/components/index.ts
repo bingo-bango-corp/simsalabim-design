@@ -8,7 +8,10 @@ export { default as BingoButton } from './BingoButton'
 export { default as BottomNav } from './BottomNav'
 export { default as ThemeProvider } from './ThemeProvider'
 
+export { default as themes } from './ThemeProvider/themes'
+
 export { RouteList, BingoRoute, BingoMeta } from './BottomNav/interfaces'
+export { themeColor, theme } from './ThemeProvider/types'
 
 const components = {
   Card,
