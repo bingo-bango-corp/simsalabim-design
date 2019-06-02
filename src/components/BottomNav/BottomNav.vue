@@ -82,7 +82,6 @@ export default class BottomNav extends Vue {
   }
 
   filterRouteByName(name: String): BingoRoute {
-    console.log(this.flattenedRouteList)
     const matched = this.flattenedRouteList.filter(r => r.name === name)
     if (matched.length != 0) return matched[0]
     else {

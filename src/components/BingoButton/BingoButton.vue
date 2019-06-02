@@ -13,11 +13,7 @@ export default Vue.extend({
   props: {
     onClick: {
       type: Function,
-      required: true,
-      default() {
-        // eslint-disable-next-line no-console
-        console.log("button clicked")
-      }
+      required: true
     },
     color: {
       type: String,
