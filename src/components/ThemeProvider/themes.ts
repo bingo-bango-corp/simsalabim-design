@@ -44,5 +44,5 @@ interface ThemeList {
 }
 
 export default <ThemeList>{
-  light, dark
+  light, dark, insane
 }
