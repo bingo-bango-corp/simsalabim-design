@@ -113,7 +113,7 @@ export default class JobCard extends Vue {
 
   get getDistanceString(): string | null {
     return this.distance
-    ? `${this.distance * 1000}m`
+    ? `${Math.round(this.distance * 1000)}m`
     : null
   }
 } 
