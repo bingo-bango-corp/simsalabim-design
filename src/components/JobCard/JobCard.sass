@@ -4,37 +4,55 @@
   text-align: left
   color: var(--foreground)
   position: relative
-  .tip
-    @include typography("sub")
-    position: absolute
-    right: 0
-    top: 0
-    height: 64px
-    width: 64px
-    background-color: var(--primary)
-    border-radius: 32px
-    color: var(--background)
-    margin-bottom: 16px
-    line-height: 64px
-    text-align: center
-    transform: translate(8px, -8px) rotate(8deg)
-  .title
-    @include typography("head")
-    padding-right: 32px
-    margin-bottom: 8px
-  .location
-    @include typography("small")
-    margin-bottom: 8px
-  .distance
-    @include typography("small")
-    margin-bottom: 8px
-  .description
-    @include typography("normal")
-    color: var(--level4)
-  .actions
-    margin-top: 16px
-    .actionButton
-      width: 100%
-      margin-bottom: 16px
-      &:last-child
-        margin-bottom: 0
+  .card
+    min-height: 64px
+    box-sizing: border-box
+    .title
+      @include typography("small")
+      transition: all .3s
+      line-height: 28px
+      &.expanded
+        @include typography("head")
+        padding-right: 32px
+        margin-bottom: 8px
+    .tip
+      @include typography("small")
+      position: absolute
+      color: var(--primary)
+      right: 8px
+      top: 0
+      height: 64px
+      width: 64px
+      text-align: center
+      line-height: 64px
+      transition: all .3s
+      border-radius: 32px
+      &.expanded
+        @include typography("sub")
+        background-color: var(--primary)
+        line-height: 64px
+        color: var(--background)
+        margin-bottom: 16px
+        transform: translate(16px, -8px) rotate(8deg)
+    .content
+      .expanded
+        .location
+          @include typography("small")
+          margin-bottom: 8px
+        .distance
+          @include typography("small")
+          margin-bottom: 8px
+        .description
+          @include typography("normal")
+          color: var(--level4)
+        .actions
+          margin-top: 16px
+          .actionButton
+            width: 100%
+            margin-bottom: 16px
+            &:last-child
+              margin-bottom: 0
+.fade-enter-active, .fade-leave-active
+  transition: all .2s ease
+.fade-enter, .fade-leave-to
+  opacity: 0
