@@ -25,6 +25,7 @@ export default class ThemeProvider extends Vue {
     return {
       '--foreground': this.flattenThemeColor(this.selectedTheme.tokens.foreground),
       '--background': this.flattenThemeColor(this.selectedTheme.tokens.background),
+      '--cardBackground': this.flattenThemeColor(this.selectedTheme.tokens.cardBackground),
       '--level1': this.flattenThemeColor(this.selectedTheme.tokens.level1),
       '--level2': this.flattenThemeColor(this.selectedTheme.tokens.level2),
       '--level3': this.flattenThemeColor(this.selectedTheme.tokens.level3),

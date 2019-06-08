@@ -10,6 +10,7 @@ export type theme = {
   tokens: {
     foreground: themeColor
     background: themeColor
+    cardBackground: themeColor
     level1: themeColor
     level2: themeColor
     level3: themeColor
