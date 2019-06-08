@@ -10,7 +10,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 export default class Card extends Vue {
   @Prop({
     type: Boolean,
-    default: true
+    default: false
   }) readonly elevated!: boolean | undefined
 } 
 </script>
