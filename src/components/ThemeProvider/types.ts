@@ -11,6 +11,8 @@ export type theme = {
     foreground: themeColor
     background: themeColor
     cardBackground: themeColor
+    primary: themeColor
+    secondary: themeColor
     level1: themeColor
     level2: themeColor
     level3: themeColor
