@@ -31,6 +31,10 @@ Bingo Bango 🧙‍♂️
 
 ThemeProvier provides themes. It does so in the form of CSS variables. There's two themes available: 'dark' or 'light'. Select your theme by passing the `theme` prop with a string that reads the theme you want. The component will then simply attach theme values as variables onto itself. Wrap your app in the theme provider and you can use the values inside. This way, you get an easy light/dark theme!
 
+### JobCard
+
+no documentation here, but worry not, it'll come real soon, promise!
+
 ## Project setup
 ```
 yarn install

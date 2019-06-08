@@ -1,0 +1,36 @@
+@import '@/mixins/typography.sass' 
+  
+.JobCard
+  text-align: left
+  color: var(--foreground)
+  position: relative
+  .tip
+    @include typography("sub")
+    position: absolute
+    right: 0
+    top: 0
+    height: 64px
+    width: 64px
+    background-color: #53EB87
+    border-radius: 32px
+    color: var(--background)
+    margin-bottom: 16px
+    line-height: 64px
+    text-align: center
+    transform: translate(16px, -16px) rotate(8deg)
+  .title
+    @include typography("head")
+    margin-bottom: 8px
+  .location
+    @include typography("small")
+    margin-bottom: 8px
+  .description
+    @include typography("normal")
+    color: var(--level4)
+  .actions
+    margin-top: 16px
+    .actionButton
+      width: 100%
+      margin-bottom: 16px
+      &:last-child
+        margin-bottom: 0
