@@ -1,6 +1,6 @@
 <template>
   <div class="JobCard">
-    <Card class="card" :elevated="!collapsed">
+    <Card class="card" :elevated="shouldBeElevated">
       <div class="tip" :class="{expanded:!collapsed}">
         {{ tipString }}
       </div>
@@ -75,6 +75,11 @@ const testActions: BingoAction[] = [
 export default class JobCard extends Vue {
   @Prop({
     type: Boolean,
+    default: undefined
+  }) readonly elevated!: boolean | undefined
+
+  @Prop({
+    type: Boolean,
     default: true
   }) readonly collapsed!: boolean
 
@@ -125,6 +130,12 @@ export default class JobCard extends Vue {
         maximumSignificantDigits: 1
       }
     ).format(this.tip.cents / 100)
+  }
+
+  get shouldBeElevated(): boolean {
+    return this.elevated != undefined
+      ? this.elevated
+      : !this.collapsed
   }
 
   get getDistanceString(): string | null {
