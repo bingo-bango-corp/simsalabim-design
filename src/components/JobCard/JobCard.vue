@@ -29,8 +29,8 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import Card from '@/components/Card'
-import BingoButton from '@/components/BingoButton'
+import Card from '../Card'
+import BingoButton from '../BingoButton'
 
 export interface BingoAction {
   title: string
