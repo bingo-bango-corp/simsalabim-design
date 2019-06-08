@@ -24,6 +24,8 @@
                 class="actionButton"
                 :key="index"
                 :onClick="action.onClick"
+                :color="action.color"
+                :backgroundColor="action.backgroundColor"
               >
                 {{ action.title }}
               </BingoButton>
@@ -42,6 +44,8 @@ import smoothReflow from 'vue-smooth-reflow'
 
 export interface BingoAction {
   title: string
+  color?: string
+  backgroundColor?: string
   onClick: Function
 }
 
@@ -52,7 +56,8 @@ export interface BingoValue {
 
 const testActions: BingoAction[] = [
   {
-    title: 'hello',
+    title: '👋 Example Action',
+    backgroundColor: 'var(--primary)',
     onClick() {
       // eslint-disable-next-line no-console
       console.log('Test Action clicked')
