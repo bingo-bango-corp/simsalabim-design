@@ -1,6 +1,9 @@
 <template>
   <div class="BingoButton">
-    <button :style="styles.buttonStyles" @click="onClick">
+    <button
+      :style="{'color':color, 'background':backgroundColor}"
+      @click="onClick"
+    >
       <slot>Button</slot>
     </button>
   </div>
@@ -15,35 +18,15 @@ export default Vue.extend({
       type: Function,
       required: true
     },
+    backgroundColor: {
+      type: String,
+      default: 'var(--secondary)'
+    },
     color: {
       type: String,
-      default: 'red'
-    }
-  },
-  computed: {
-    styles() {
-      switch(this.color) {
-        case 'red':
-          return {
-            ripple: 'rgba(255, 255, 255, 0.1)',
-            buttonStyles: {
-              background: '#EB5757',
-              color: '#FFFFFF'
-            }
-          }
-        case 'white':
-          return {
-            ripple: 'rgba(0, 0, 0, 0.1)',
-            buttonStyles: {
-              background: '#FFFFFF',
-              color: '#333333'
-            }
-          }
-        default: 
-          return null
-      }
+      default: 'var(--background)'
     },
-  }
+  },
 })
 </script>
 
