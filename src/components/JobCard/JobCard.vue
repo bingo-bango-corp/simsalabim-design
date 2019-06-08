@@ -7,8 +7,11 @@
       <div class="title">
         {{ title }}
       </div>
-      <div class="location">
+      <div class="location" v-if="location">
         {{ location }}
+      </div>
+      <div class="distance" v-if="distance">
+        {{ getDistanceString }}
       </div>
       <div class="description">
         {{ description }}
@@ -79,8 +82,11 @@ export default class JobCard extends Vue {
 
   @Prop({
     type: String,
-    default: 'Location'
-  }) readonly location!: string
+  }) readonly location!: string | undefined
+
+  @Prop({
+    type: Number,
+  }) readonly distance!: number | undefined
 
   @Prop({
     type: String,
@@ -103,6 +109,12 @@ export default class JobCard extends Vue {
         maximumSignificantDigits: 1
       }
     ).format(this.tip.cents / 100)
+  }
+
+  get getDistanceString(): string | null {
+    return this.distance
+    ? `${this.distance * 1000}m`
+    : null
   }
 } 
 </script>
