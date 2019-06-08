@@ -1,6 +1,10 @@
 @import '@/mixins/elevation.sass'
 .Card
-    @include elevation(2)
+    @include elevation(0)
     border-radius: 16px
     background-color: var(--cardBackground)
     padding: 24px
+    transition: all .3s
+
+    &.elevated
+        @include elevation(2)
