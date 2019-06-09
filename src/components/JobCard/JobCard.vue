@@ -15,6 +15,10 @@
             <div class="distance" v-if="distance">
               {{ getDistanceString }}
             </div>
+            <div class="owner" v-if="owner">
+              <img class="profilePic" :src="owner.pictureURL"/>
+              <span class="name">{{ owner.displayName }}</span>
+            </div>
             <div class="description">
               {{ description }}
             </div>
@@ -73,6 +77,14 @@ const testActions: BingoAction[] = [
   mixins: [smoothReflow],
 })
 export default class JobCard extends Vue {
+  @Prop({
+    type: Object,
+    default() { return {
+      displayName: 'Spliff Masta J',
+      pictureURL:'https://lh5.googleusercontent.com/-PZ3VyvQfdqY/AAAAAAAAAAI/AAAAAAABL40/SAgsfp6J5MA/photo.jpg'
+    }}
+  }) readonly owner!: object
+
   @Prop({
     type: Boolean,
     default: undefined

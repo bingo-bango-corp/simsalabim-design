@@ -37,6 +37,17 @@
         transform: translate(16px, -8px) rotate(8deg)
     .content
       .expanded
+        .owner
+          display: flex
+          align-items: center
+          margin-bottom: 8px
+          .profilePic
+            height: 32ps
+            width: 32px
+            border-radius: 16px
+            margin-right: 8px
+          .name
+            @include typography("normal")
         .location
           @include typography("small")
           margin-bottom: 8px
