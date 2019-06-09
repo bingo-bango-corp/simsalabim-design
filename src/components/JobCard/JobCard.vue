@@ -1,14 +1,18 @@
 <template>
   <div class="JobCard">
     <Card class="card" :elevated="shouldBeElevated">
-      <div class="tip" :class="{expanded:!collapsed}">
+      <div 
+        class="tip"
+       :class="{expanded:!collapsed}"
+       :style="{'--rotationAmount':randomRotationCssVariable}"
+      >
         {{ tipString }}
       </div>
       <div class="title" :class="{expanded:!collapsed}">
         {{ title }}
       </div>
       <div class="content" id="smooth">
-          <div v-if="!collapsed" class="expanded" :key="expanded">
+          <div v-if="!collapsed" class="expanded">
             <div class="location" v-if="location">
               {{ location }}
             </div>
@@ -77,6 +81,13 @@ const testActions: BingoAction[] = [
   mixins: [smoothReflow],
 })
 export default class JobCard extends Vue {
+  get randomRotationCssVariable() {
+    let min = Math.ceil(-10)
+    let max = Math.floor(20)
+    const rotationValue = Math.floor(Math.random() * (max - min + 1)) + min
+    return `${rotationValue}deg`
+  }
+
   @Prop({
     type: Object,
   }) readonly owner!: object | undefined
@@ -88,7 +99,7 @@ export default class JobCard extends Vue {
 
   @Prop({
     type: Boolean,
-    default: true
+    default: false
   }) readonly collapsed!: boolean
 
   @Prop({
