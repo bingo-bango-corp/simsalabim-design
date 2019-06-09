@@ -18,7 +18,6 @@ export default class BingoInput extends Vue {
 
   @Prop({
     type: String,
-    default: 'Placeholder'
   }) readonly placeholder!: string | undefined
 
   content = this.value || ''

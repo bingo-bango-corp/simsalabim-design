@@ -35,6 +35,10 @@ ThemeProvier provides themes. It does so in the form of CSS variables. There's t
 
 no documentation here, but worry not, it'll come real soon, promise!
 
+### BingoInput
+
+no documentation here, but worry not, it'll come real soon, promise!
+
 ## Project setup
 ```
 yarn install
