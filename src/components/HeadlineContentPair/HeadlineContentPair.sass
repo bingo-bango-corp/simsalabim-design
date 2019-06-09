@@ -1,0 +1,14 @@
+@import '@/mixins/typography.sass'
+
+.HeadlineContentPair
+  width: 100%
+  box-sizing: border-box
+  text-align: left
+  .headline
+    @include typography("sub")
+    color: var(--foreground)
+    margin-bottom: 8px
+  .description
+    @include typography("normal")
+    color: var(--level4)
+    margin-bottom: 8px
