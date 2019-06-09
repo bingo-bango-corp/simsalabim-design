@@ -79,11 +79,7 @@ const testActions: BingoAction[] = [
 export default class JobCard extends Vue {
   @Prop({
     type: Object,
-    default() { return {
-      displayName: 'Spliff Masta J',
-      pictureURL:'https://lh5.googleusercontent.com/-PZ3VyvQfdqY/AAAAAAAAAAI/AAAAAAABL40/SAgsfp6J5MA/photo.jpg'
-    }}
-  }) readonly owner!: object
+  }) readonly owner!: object | undefined
 
   @Prop({
     type: Boolean,
