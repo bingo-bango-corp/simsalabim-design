@@ -3,6 +3,7 @@
     class="BingoInput"
     v-model="content"
     @input="handleInput"
+    @blur="handleBlur"
     :placeholder="placeholder"
   >
 </template>
@@ -24,6 +25,10 @@ export default class BingoInput extends Vue {
 
   handleInput(e: Event) {
     this.$emit('input', this.content)
+  }
+
+  handleBlur(e: Event) {
+    this.$emit('blur', e)
   }
 } 
 </script>
