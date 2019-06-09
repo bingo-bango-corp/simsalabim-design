@@ -3,12 +3,14 @@ import BingoButton from './BingoButton'
 import BottomNav from './BottomNav'
 import ThemeProvider from './ThemeProvider'
 import JobCard from './JobCard'
+import BingoInput from './BingoInput'
 
 export { default as Card } from './Card'
 export { default as BingoButton } from './BingoButton'
 export { default as BottomNav } from './BottomNav'
 export { default as ThemeProvider } from './ThemeProvider'
 export { default as JobCard } from './JobCard'
+export { default as BingoInput } from './BingoInput'
 
 export { default as themes } from './ThemeProvider/themes'
 
@@ -20,7 +22,8 @@ const components = {
   BingoButton,
   BottomNav,
   ThemeProvider,
-  JobCard
+  JobCard,
+  BingoInput
 }
 
 export default components

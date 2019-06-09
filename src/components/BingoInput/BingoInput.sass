@@ -1,0 +1,19 @@
+@import "@/mixins/typography.sass"
+@import "@/mixins/elevation.sass"
+  
+.BingoInput
+  @include typography("small")
+  @include elevation(0)
+  background: var(--cardBackground)
+  outline: none
+  height: 64px
+  width: 100%
+  box-sizing: border-box
+  border-radius: 16px
+  padding: 0 16px
+  color: var(--foreground)
+  transition: all .3s
+  &::placeholder
+    color: var(--level4)
+  &:focus
+    @include elevation(2)
