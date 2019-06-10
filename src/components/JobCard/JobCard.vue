@@ -31,7 +31,8 @@
                 v-for="(action, index) in actions"
                 class="actionButton"
                 :key="index"
-                :onClick="action.onClick"
+                :eventMetadata="{ jobId: jobId }"
+                @clicked="action.onClick"
                 :color="action.color"
                 :backgroundColor="action.backgroundColor"
               >
@@ -66,9 +67,9 @@ const testActions: BingoAction[] = [
   {
     title: '👋 Example Action',
     backgroundColor: 'var(--primary)',
-    onClick() {
+    onClick(jobId: string) {
       // eslint-disable-next-line no-console
-      console.log('Test Action clicked')
+      console.log('Test Action clicked', jobId)
     }
   },
 ]
@@ -87,6 +88,11 @@ export default class JobCard extends Vue {
     const rotationValue = Math.floor(Math.random() * (max - min + 1)) + min
     return `${rotationValue}deg`
   }
+
+  @Prop({
+    type: String,
+    required: true,
+  }) readonly jobId!: string
 
   @Prop({
     type: Object,
