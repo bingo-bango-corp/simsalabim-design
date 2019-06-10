@@ -2,7 +2,7 @@
   <div class="BingoButton">
     <button
       :style="{'color':color, 'background':backgroundColor}"
-      @click="onClick"
+      @click="handleClick"
     >
       <slot>Button</slot>
     </button>
@@ -14,10 +14,6 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'bingo-button',
   props: {
-    onClick: {
-      type: Function,
-      required: true
-    },
     backgroundColor: {
       type: String,
       default: 'var(--secondary)'
@@ -26,7 +22,18 @@ export default Vue.extend({
       type: String,
       default: 'var(--background)'
     },
+    eventMetadata: {
+      type: Object
+    }
   },
+  methods: {
+    handleClick(event: Event) {
+      this.$emit('clicked', {
+        meta: this.eventMetadata,
+        event: event
+      })
+    }
+  }
 })
 </script>
 
