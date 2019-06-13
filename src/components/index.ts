@@ -5,6 +5,7 @@ import ThemeProvider from './ThemeProvider'
 import JobCard from './JobCard'
 import BingoInput from './BingoInput'
 import HeadlineContentPair from './HeadlineContentPair'
+import ChatMessage from './ChatMessage'
 
 export { default as Card } from './Card'
 export { default as BingoButton } from './BingoButton'
@@ -13,6 +14,7 @@ export { default as ThemeProvider } from './ThemeProvider'
 export { default as JobCard } from './JobCard'
 export { default as BingoInput } from './BingoInput'
 export { default as HeadlineContentPair } from './HeadlineContentPair'
+export { default as ChatMessage } from './ChatMessage'
 
 export { default as themes } from './ThemeProvider/themes'
 
@@ -26,7 +28,8 @@ const components = {
   ThemeProvider,
   JobCard,
   BingoInput,
-  HeadlineContentPair
+  HeadlineContentPair,
+  ChatMessage
 }
 
 export default components

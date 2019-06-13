@@ -1,0 +1,26 @@
+@import '@/mixins/typography.sass'
+
+.ChatMessage
+  text-align: left
+  .displayName
+    @include typography("tiny")
+    margin-left: 40px
+    color: var(--primary)
+  .photoMessage
+    margin-top: 4px
+    display: flex
+    align-items: center
+    .message
+      @include typography("normal")
+      flex-basis: 0
+      flex-grow: 1
+      padding: 12px
+      background-color: var(--level1)
+      color: var(--foreground)
+      border-radius: 8px
+      text-align: left
+      margin: 0 8px
+    .photo
+      height: 32px
+      width: 32px
+      border-radius: 16px
