@@ -1,0 +1,30 @@
+.TypingIndicator
+  text-align: left
+  display: flex
+  align-items: center
+  .photo
+    height: 32px
+    width: 32px
+    border-radius: 16px
+    margin-right: 16px
+  .typing
+    display: flex
+    .dot
+      height: 8px
+      width: 8px
+      background: var(--level2)
+      border-radius: 4px
+      margin-right: 4px
+      animation: dotAnimation 1s infinite
+      &.two
+        animation-delay: .1s
+      &.three
+        animation-delay: .2s
+
+@keyframes dotAnimation
+  0% 
+    background: var(--level1)
+  50% 
+    background: var(--level3)
+  100% 
+    background: var(--level1)
