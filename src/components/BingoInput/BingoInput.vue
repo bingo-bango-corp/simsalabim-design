@@ -1,6 +1,7 @@
 <template>
   <input 
     class="BingoInput"
+    type="text"
     :value="value"
     @input="$emit('input', $event.target.value)"
     @change="handleChange"
