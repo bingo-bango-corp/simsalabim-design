@@ -1,7 +1,7 @@
 <template>
   <input 
     class="BingoInput"
-    v-model="content"
+    :value="value"
     @input="handleInput"
     @change="handleChange"
     @blur="handleBlur"
@@ -22,10 +22,8 @@ export default class BingoInput extends Vue {
     type: String,
   }) readonly placeholder!: string | undefined
 
-  content = this.value || ''
-
   handleInput(e: Event) {
-    this.$emit('input', this.content)
+    this.$emit('input', this.value)
   }
 
   handleBlur(e: Event) {
@@ -35,7 +33,7 @@ export default class BingoInput extends Vue {
   handleChange(e: Event) {
     this.$emit('change', e)
   }
-} 
+}
 </script>
 
 <style scoped lang="sass" src="./BingoInput.sass" />
