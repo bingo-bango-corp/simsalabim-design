@@ -2,7 +2,7 @@
   <input 
     class="BingoInput"
     :value="value"
-    @input="handleInput"
+    @input="$emit('input', $event.target.value)"
     @change="handleChange"
     @blur="handleBlur"
     :placeholder="placeholder"
@@ -21,10 +21,6 @@ export default class BingoInput extends Vue {
   @Prop({
     type: String,
   }) readonly placeholder!: string | undefined
-
-  handleInput(e: Event) {
-    this.$emit('input', this.value)
-  }
 
   handleBlur(e: Event) {
     this.$emit('blur', e)
