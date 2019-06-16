@@ -21,7 +21,7 @@ export const dark: theme = {
   tokens: {
     foreground: {r: 255, g: 255, b: 255, a: 1},
     background: {r: 34, g: 35, b: 41, a: 1},
-    cardBackground: {r: 255, g: 255, b: 255, a: .1},
+    cardBackground: {r: 57, g: 57, b: 63, a: 1},
     primary: {r: 83, g: 235, b: 135, a: 1},
     secondary: {r: 102, g: 81, b: 234, a: 1},
     level1: {r: 255, g: 255, b: 255, a: .1},
