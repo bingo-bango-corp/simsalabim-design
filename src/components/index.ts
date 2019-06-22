@@ -22,6 +22,7 @@ export { default as themes } from './ThemeProvider/themes'
 
 export { RouteList, BingoRoute, BingoMeta } from './BottomNav/interfaces'
 export { themeColor, theme } from './ThemeProvider/types'
+export { BingoAction, BingoValue } from './JobCard/types'
 
 const components = {
   Card,

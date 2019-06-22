@@ -51,17 +51,7 @@ import Card from '../Card'
 import BingoButton from '../BingoButton'
 import smoothReflow from 'vue-smooth-reflow'
 
-export interface BingoAction {
-  title: string
-  color?: string
-  backgroundColor?: string
-  onClick: Function
-}
-
-export interface BingoValue {
-  cents: number,
-  currency: string
-}
+import { BingoAction, BingoValue } from './types'
 
 const testActions: BingoAction[] = [
   {
