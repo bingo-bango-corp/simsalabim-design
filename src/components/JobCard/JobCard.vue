@@ -32,7 +32,7 @@
                 class="actionButton"
                 :key="index"
                 :eventMetadata="{ jobId: jobId }"
-                @clicked="callAction(action.onClick)"
+                @clicked="callAction($event, action.onClick)"
                 :color="action.color"
                 :backgroundColor="action.backgroundColor"
               >
@@ -159,7 +159,7 @@ export default class JobCard extends Vue {
     : null
   }
 
-  callAction(action: Function): void {
+  callAction(event: Event, action: Function): void {
     this.$emit('actionClicked', action)
     action()
   }
