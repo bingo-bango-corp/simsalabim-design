@@ -161,7 +161,7 @@ export default class JobCard extends Vue {
 
   callAction(event: Event, action: Function): void {
     this.$emit('actionClicked', action)
-    action()
+    action(event)
   }
 
   mounted() {
