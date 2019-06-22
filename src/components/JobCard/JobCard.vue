@@ -32,7 +32,7 @@
                 class="actionButton"
                 :key="index"
                 :eventMetadata="{ jobId: jobId }"
-                @clicked="action.onClick"
+                @clicked="callAction(action.onClick)"
                 :color="action.color"
                 :backgroundColor="action.backgroundColor"
               >
@@ -157,6 +157,11 @@ export default class JobCard extends Vue {
     return this.distance
     ? `${Math.round(this.distance * 1000)}m`
     : null
+  }
+
+  callAction(action: Function): void {
+    this.$emit('actionClicked')
+    action()
   }
 
   mounted() {
