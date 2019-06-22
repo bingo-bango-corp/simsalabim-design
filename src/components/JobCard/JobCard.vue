@@ -160,7 +160,7 @@ export default class JobCard extends Vue {
   }
 
   callAction(action: Function): void {
-    this.$emit('actionClicked')
+    this.$emit('actionClicked', action)
     action()
   }
 
