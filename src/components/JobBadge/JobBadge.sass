@@ -1,0 +1,89 @@
+@import '@/mixins/typography.sass'
+@import '@/mixins/elevation.sass'
+  
+.JobBadge
+  @include elevation(2)
+  transition: all .3s
+  height: 64px
+  max-width: 320px
+  margin: 0 auto
+  padding: 8px
+  box-sizing: border-box
+  border-radius: 32px
+  display: flex
+  align-items: center
+  cursor: pointer
+  user-select: none
+  .profileSection
+    position: relative
+    .profilePic
+      height: 48px
+      width: 48px
+      display: block
+      border-radius: 24px
+      box-sizing: border-box
+      margin-right: 8px
+      animation: borderPulse 10s linear infinite
+    .unread
+      bottom: 0
+      right: 8px
+      position: absolute
+      z-index: 1
+      height: 18px
+      width: 18px
+      background: red
+      border-radius: 16px
+      @include typography('tiny')
+      border: 2px solid white
+      font-weight: bold
+      &:after
+        position: absolute
+        top: -2px
+        left: -2px
+        border-radius: 16px
+        content: ''
+        display: block
+        width: 22px
+        height: 22px
+        box-shadow: 0 0 0px 10px red
+        opacity: .8
+        animation: pulse 2s linear infinite
+  .info
+    text-align: left
+    h3
+      @include typography('smallcaps')
+      margin-bottom: 8px
+      opacity: .8
+    h2
+      @include typography('small')
+  &:hover
+    @include elevation(3)
+
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0px 0px white
+  25%
+    box-shadow: 0 0 0px 7.5px white
+  50%
+    box-shadow: 0 0 0px 15px white
+    opacity: 0
+  100%
+    box-shadow: 0 0 0px 20px white
+    opacity: 0
+
+@keyframes borderPulse
+  0%
+    border: 2px solid var(--background)
+    transform: rotate(0deg)
+  50%
+    border: 2px solid var(--primary)
+    transform: rotate(180deg)
+  100%
+    border: 2px solid var(--background)
+    transform: rotate(360deg)
+
+.bounce-enter-active, .bounce-leave-active
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.5, 1.275)
+
+.bounce-enter, .bounce-leave-to
+  transform: scale(0)

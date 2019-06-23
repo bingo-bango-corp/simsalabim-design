@@ -1,4 +1,5 @@
 import Card from './Card'
+import JobBadge from './JobBadge'
 import BingoButton from './BingoButton'
 import BottomNav from './BottomNav'
 import ThemeProvider from './ThemeProvider'
@@ -17,6 +18,7 @@ export { default as BingoInput } from './BingoInput'
 export { default as HeadlineContentPair } from './HeadlineContentPair'
 export { default as ChatMessage } from './ChatMessage'
 export { default as TypingIndicator } from './TypingIndicator'
+export { default as JobBadge } from './JobBadge'
 
 export { default as themes } from './ThemeProvider/themes'
 
@@ -33,7 +35,8 @@ const components = {
   BingoInput,
   HeadlineContentPair,
   ChatMessage,
-  TypingIndicator
+  TypingIndicator,
+  JobBadge
 }
 
 export default components
