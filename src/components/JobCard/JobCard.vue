@@ -150,6 +150,11 @@ export default class JobCard extends Vue {
     }
   }) readonly actions!: BingoAction[] | undefined
 
+  @Prop({
+    type: Boolean,
+    default: true
+  }) readonly callActions!: boolean
+
   get tipString(): string {
     return new Intl.NumberFormat(
       this.locale, 
@@ -175,7 +180,7 @@ export default class JobCard extends Vue {
 
   callAction(event: Event, action: Function): void {
     this.$emit('actionClicked', action)
-    action(event)
+    if (this.callActions) action(event)
   }
 
   mounted() {
