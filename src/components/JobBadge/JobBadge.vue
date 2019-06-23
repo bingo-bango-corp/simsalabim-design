@@ -8,7 +8,7 @@
     }"
   >
     <div class="profileSection">
-      <img class="profilePic" src="https://lh3.googleusercontent.com/-PZ3VyvQfdqY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rej4p2auTZi8BVvyXzXDW4X-fn7kw.CMID/s64-c-mo/photo.jpg"/>
+      <img class="profilePic" :src="pictureUrl"/>
       <transition name="bounce">
         <div v-if="unreadCount > 0" class="unread">
           {{ unreadCount }}
