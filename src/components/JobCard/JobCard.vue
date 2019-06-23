@@ -23,8 +23,16 @@
               <img class="profilePic" :src="owner.pictureURL"/>
               <span class="name">{{ owner.displayName }}</span>
             </div>
-            <div class="description">
+            <div v-if="description" class="description">
               {{ description }}
+            </div>
+            <div v-if="personNote" class="personNote">
+              <img
+                class="avatar"
+                v-if="personNote.pictureUrl"
+                :src="personNote.pictureUrl"
+              />
+              <p class="text">{{ personNote.text }}</p>
             </div>
             <div v-if="actions" class="actions">
               <BingoButton 
@@ -126,8 +134,14 @@ export default class JobCard extends Vue {
 
   @Prop({
     type: String,
-    default: 'Description'
-  }) readonly description!: string
+  }) readonly description!: string | undefined
+
+  @Prop({
+    type: Object,
+  }) readonly personNote!: {
+    pictureUrl?: URL,
+    text: string,
+  } | undefined
 
   @Prop({
     type: Array,
