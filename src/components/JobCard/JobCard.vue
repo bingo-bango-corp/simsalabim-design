@@ -178,7 +178,11 @@ export default class JobCard extends Vue {
     : null
   }
 
-  callAction(event: Event, action: Function): void {
+  callAction(event: {
+    meta: object,
+    event: Event
+  }, action: Function): void {
+    event.event.stopPropagation()
     this.$emit('actionClicked', action)
     if (this.callActions) action(event)
   }
