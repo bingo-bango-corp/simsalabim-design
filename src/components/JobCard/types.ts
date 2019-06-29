@@ -2,7 +2,7 @@ export interface BingoAction {
   title: string
   color?: string
   backgroundColor?: string
-  onClick: Function
+  onClick(): Promise<void>
 }
 
 export interface BingoValue {

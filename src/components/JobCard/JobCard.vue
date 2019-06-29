@@ -65,9 +65,9 @@ const testActions: BingoAction[] = [
   {
     title: '👋 Example Action',
     backgroundColor: 'var(--primary)',
-    onClick(jobId: string) {
+    onClick: async () => {
       // eslint-disable-next-line no-console
-      console.log('Test Action clicked', jobId)
+      console.log('Test Action clicked')
     }
   },
 ]
