@@ -2,26 +2,40 @@
 
 .ChatMessage
   text-align: left
-  .displayName
-    @include typography("tiny")
-    margin-left: 40px
-    color: var(--primary)
-  .photoMessage
-    margin-top: 4px
+  .message
+    .displayName
+      @include typography("tiny")
+      margin-left: 40px
+      color: var(--primary)
+    .photoMessage
+      margin-top: 4px
+      display: flex
+      align-items: center
+      .message
+        @include typography("normal")
+        flex-basis: 0
+        flex-grow: 1
+        padding: 12px
+        background-color: var(--level1)
+        color: var(--foreground)
+        border-radius: 8px
+        text-align: left
+        margin: 0 8px
+        max-width: 350px
+      .photo
+        height: 32px
+        width: 32px
+        border-radius: 16px
+  .notice
     display: flex
     align-items: center
-    .message
-      @include typography("normal")
-      flex-basis: 0
+    .line
+      height: 2px
       flex-grow: 1
-      padding: 12px
+      border-radius: 1px
       background-color: var(--level1)
-      color: var(--foreground)
-      border-radius: 8px
-      text-align: left
-      margin: 0 8px
-      max-width: 350px
-    .photo
-      height: 32px
-      width: 32px
-      border-radius: 16px
+    .message
+      margin: 0 12px
+      @include typography("tiny")
+      color: var(--level4)
+  
