@@ -137,12 +137,10 @@ export default class JobCard extends Vue {
 
   @Prop({
     type: String,
-    default: 'hello'
   }) readonly description!: string | undefined
 
   @Prop({
     type: String,
-    default: 'hello'
   }) readonly metadata!: string | undefined
 
   @Prop({
