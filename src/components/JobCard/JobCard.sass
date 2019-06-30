@@ -37,6 +37,10 @@
         transform: translate(16px, -8px) rotate(var(--rotationAmount))
     .content
       .expanded
+        > *
+          margin-bottom: 8px
+          &:last-child
+            margin-bottom: 0
         .owner
           display: flex
           align-items: center
@@ -69,7 +73,7 @@
             border-radius: 16px
             background: grey
         .actions
-          margin-top: 16px
+          margin-top: 8px
           .actionButton
             width: 100%
             margin-bottom: 16px
