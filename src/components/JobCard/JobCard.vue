@@ -34,6 +34,9 @@
               />
               <p class="text">{{ personNote.text }}</p>
             </div>
+            <div v-if="metadata" class="metadata">
+              {{ metadata }}
+            </div>
             <div v-if="actions" class="actions">
               <BingoButton 
                 v-for="(action, index) in actions"
@@ -135,6 +138,10 @@ export default class JobCard extends Vue {
   @Prop({
     type: String,
   }) readonly description!: string | undefined
+
+  @Prop({
+    type: String,
+  }) readonly metadata!: string | undefined
 
   @Prop({
     type: Object,
