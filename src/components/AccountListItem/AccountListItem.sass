@@ -1,0 +1,18 @@
+@import '@/mixins/elevation.sass'
+@import '@/mixins/typography.sass'
+
+.AccountListItem
+  display: flex
+  align-items: center
+  .icon
+    @include elevation(2)
+    width: 40px
+    height: 40px
+    border-radius: 20px
+    display: flex
+    align-content: center
+    justify-content: center
+    margin-right: 8px
+  .label
+    @include typography('normal')
+    color: var(--foreground)

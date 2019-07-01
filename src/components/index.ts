@@ -8,6 +8,7 @@ import BingoInput from './BingoInput'
 import HeadlineContentPair from './HeadlineContentPair'
 import ChatMessage from './ChatMessage'
 import TypingIndicator from './TypingIndicator'
+import AccountListItem from './AccountListItem'
 
 export { default as Card } from './Card'
 export { default as BingoButton } from './BingoButton'
@@ -19,6 +20,7 @@ export { default as HeadlineContentPair } from './HeadlineContentPair'
 export { default as ChatMessage } from './ChatMessage'
 export { default as TypingIndicator } from './TypingIndicator'
 export { default as JobBadge } from './JobBadge'
+export { default as AccountListItem } from './AccountListItem'
 
 export { default as themes } from './ThemeProvider/themes'
 
@@ -36,7 +38,8 @@ const components = {
   HeadlineContentPair,
   ChatMessage,
   TypingIndicator,
-  JobBadge
+  JobBadge,
+  AccountListItem
 }
 
 export default components
