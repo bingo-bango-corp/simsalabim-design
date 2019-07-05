@@ -1,3 +1,3 @@
 export type accountType =
-  'google' |
-  'facebook'
+  'google.com' |
+  'facebook.com'

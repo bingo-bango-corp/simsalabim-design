@@ -1,8 +1,6 @@
 <template>
   <div class="AccountListItem">
-    <div :style="{ background: colorForAccountType }" class="icon">
-      <img :src="iconForAccountType" />
-    </div>
+    <div :style="{ background: colorForAccountType }" class="icon" v-html="iconForAccountType" />
     <div class="label">
       {{ label }}
     </div>
@@ -29,15 +27,14 @@ export default class AccountListItem extends Vue {
   }) readonly label!: string
 
   get iconForAccountType() {
-    if (!icons[this.accountType]) {
+    if (!(icons as any)[this.accountType.split('.')[0]]) {
       throw new Error('Unknown account type')
     }
-
-    return icons[this.accountType]
+    return (icons as any)[this.accountType.split('.')[0]]
   }
 
   get colorForAccountType() {
-    return colors[this.accountType]
+    return (colors as any)[this.accountType.split('.')[0]]
   }
 }
 </script>
