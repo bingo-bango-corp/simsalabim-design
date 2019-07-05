@@ -1,0 +1,45 @@
+@import '@/mixins/elevation.sass'
+@import '@/mixins/typography.sass'
+  
+.RewardPicker
+  text-align: left
+  display: flex
+  overflow: scroll
+  .reward
+    display: flex
+    flex-direction: column
+    display: inline-block
+    margin-right: 8px
+    &:last-child
+      margin-right: 0
+    &.selected
+      .icon
+        @include elevation(2)
+        background: var(--secondary)
+        transform: scale(1)
+      .amount
+        opacity: 1
+    .icon
+      @include elevation(0)
+      box-sizing: border-box
+      display: flex
+      transition: all .3s
+      justify-content: center
+      align-items: center
+      height: 64px
+      background: var(--cardBackground)
+      width: 64px
+      border-radius: 32px
+      text-align: center
+      margin-bottom: 8px
+      transform: scale(.9)
+      .emoji
+        width: 24px
+        height: 32px
+        text-align: center
+        line-height: 32px
+        font-size: 24px
+    .amount
+      text-align: center
+      opacity: .3
+      transition: all .3s

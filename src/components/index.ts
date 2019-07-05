@@ -3,6 +3,7 @@ import JobBadge from './JobBadge'
 import BingoButton from './BingoButton'
 import BottomNav from './BottomNav'
 import ThemeProvider from './ThemeProvider'
+import RewardPicker from './RewardPicker'
 import JobCard from './JobCard'
 import BingoInput from './BingoInput'
 import HeadlineContentPair from './HeadlineContentPair'
@@ -12,6 +13,7 @@ import AccountListItem from './AccountListItem'
 
 export { default as Card } from './Card'
 export { default as BingoButton } from './BingoButton'
+export { default as RewardPicker } from './RewardPicker'
 export { default as BottomNav } from './BottomNav'
 export { default as ThemeProvider } from './ThemeProvider'
 export { default as JobCard } from './JobCard'
@@ -34,6 +36,7 @@ const components = {
   BottomNav,
   ThemeProvider,
   JobCard,
+  RewardPicker,
   BingoInput,
   HeadlineContentPair,
   ChatMessage,
