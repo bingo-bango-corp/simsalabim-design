@@ -5,10 +5,34 @@
   box-sizing: border-box
   text-align: left
   .headline
-    @include typography("sub")
-    color: var(--foreground)
-    margin-bottom: 8px
+    display: flex
+    justify-content: space-between
+    h1
+      @include typography("sub")
+      color: var(--foreground)
+      margin-bottom: 8px
   .description
-    @include typography("normal")
-    color: var(--level4)
-    margin-bottom: 8px
+    display: flex
+    justify-content: space-between
+    h3
+      @include typography("normal")
+      color: var(--level4)
+      margin-bottom: 8px
+    .refreshButton
+      @include typography("normal")
+      color: var(--level4)
+      display: flex
+      justify-content: center
+      .icon
+        margin-right: 4px
+        fill: var(--level4)
+        &.animate
+          animation: rotate 1s infinite
+      h3
+        margin-bottom: 0
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
