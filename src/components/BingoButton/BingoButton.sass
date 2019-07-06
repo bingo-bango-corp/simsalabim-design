@@ -12,8 +12,14 @@
     padding: 0 24px
     border: none
     outline: none
+    box-sizing: border-box
     cursor: pointer
     transition: box-shadow .3s, background .3s
     &:hover
       @include elevation(3)
-      background: lighten(#EB5757, 5)
+  &.disabled
+    opacity: .5
+    cursor: default
+    button
+      cursor: default
+      &:hover

@@ -1,8 +1,9 @@
 <template>
-  <div class="BingoButton">
+  <div class="BingoButton" :class="{ disabled }">
     <button
       :style="{'color':color, 'background':backgroundColor}"
       @click="handleClick"
+      :disabled="disabled"
     >
       <slot>Button</slot>
     </button>
@@ -24,6 +25,10 @@ export default Vue.extend({
     },
     eventMetadata: {
       type: Object
+    },
+    disabled: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {
