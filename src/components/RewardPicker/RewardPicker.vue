@@ -55,7 +55,7 @@ export default class RewardPicker extends Vue {
   selected: number | null = null
 
   @Prop({
-    type: Object,
+    type: Array,
     required: true
   }) readonly rewards!: RewardList
 
